@@ -1,4 +1,3 @@
-advancedcpp
-===========
+# My solutions to the advanced c++ course at the UZH
 
-My solutions to the advanced c++ cours
+use with caution.
