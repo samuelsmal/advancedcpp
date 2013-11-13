@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1384104053 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn_algrorithm/fraction.cpp
+	"fraction.h"
+	"util.h"
+
+1384110793 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn_algrorithm/fraction.h
+	<iostream>
+
+1384104021 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn_algrorithm/util.h
+

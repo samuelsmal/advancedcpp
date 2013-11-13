@@ -1,0 +1,280 @@
+11:04:44 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:04:54 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:05:55 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+rm -f ./.depend
+g++ -g -std=c++11 -Wall -MM main.cpp fraction.cpp test.cpp>>./.depend;
+g++  -g -std=c++11 -Wall  -c -o fraction.o fraction.cpp
+g++ -g -o fraction main.o fraction.o test.o 
+11:06:10 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:11:48 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:15:32 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+rm -f ./.depend
+g++ -g -std=c++11 -Wall -MM main.cpp fraction.cpp test.cpp>>./.depend;
+g++  -g -std=c++11 -Wall  -c -o fraction.o fraction.cpp
+g++  -g -std=c++11 -Wall  -c -o test.o test.cpp
+g++ -g -o fraction main.o fraction.o test.o 
+11:15:34 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:17:48 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+rm -f ./.depend
+g++ -g -std=c++11 -Wall -MM main.cpp fraction.cpp test.cpp>>./.depend;
+g++  -g -std=c++11 -Wall  -c -o test.o test.cpp
+g++ -g -o fraction main.o fraction.o test.o 
+11:17:51 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:33:36 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:33:36 **** Build of configuration Debug for project ProcessCreation ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: ProcessCreation
+Invoking: GCC C++ Linker
+g++  -o "ProcessCreation"  ./main.o   
+Finished building target: ProcessCreation
+ 
+11:33:41 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:34:15 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:34:15 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: ProcessCreation
+Invoking: GCC C++ Linker
+g++  -o "ProcessCreation"  ./main.o   
+Finished building target: ProcessCreation
+ 
+11:34:18 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:34:29 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:34:29 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: ProcessCreation
+Invoking: GCC C++ Linker
+g++  -o "ProcessCreation"  ./main.o   
+Finished building target: ProcessCreation
+ 
+11:34:30 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:39:30 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:39:30 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+../main.cpp: In function ‘int main(int, const char**)’:
+../main.cpp:21:31: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:21:50: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:25:36: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:25:55: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+Finished building: ../main.cpp
+ 
+Building target: ProcessCreation
+Invoking: GCC C++ Linker
+g++  -o "ProcessCreation"  ./main.o   
+Finished building target: ProcessCreation
+ 
+11:39:32 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:40:28 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:40:28 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+../main.cpp: In function ‘int main(int, const char**)’:
+../main.cpp:21:31: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:21:50: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:26:36: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:26:55: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+Finished building: ../main.cpp
+ 
+Building target: ProcessCreation
+Invoking: GCC C++ Linker
+g++  -o "ProcessCreation"  ./main.o   
+Finished building target: ProcessCreation
+ 
+11:41:10 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:41:37 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:42:18 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:42:18 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+../main.cpp: In function ‘int main(int, const char**)’:
+../main.cpp:21:31: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:21:50: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:26:36: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:26:55: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+Finished building: ../main.cpp
+ 
+Building target: ProcessCreation
+Invoking: GCC C++ Linker
+g++  -o "ProcessCreation"  ./main.o   
+Finished building target: ProcessCreation
+ 
+11:42:21 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:43:05 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:44:44 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:44:44 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+../main.cpp: In function ‘int main(int, const char**)’:
+../main.cpp:21:31: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:21:50: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:26:36: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:26:55: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+Finished building: ../main.cpp
+ 
+Building target: ProcessCreation
+Invoking: GCC C++ Linker
+g++  -o "ProcessCreation"  ./main.o   
+Finished building target: ProcessCreation
+ 
+11:44:47 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:45:04 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:45:04 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+../main.cpp: In function ‘int main(int, const char**)’:
+../main.cpp:21:31: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:21:50: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:26:36: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:26:55: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+Finished building: ../main.cpp
+ 
+Building target: ProcessCreation
+Invoking: GCC C++ Linker
+g++  -o "ProcessCreation"  ./main.o   
+Finished building target: ProcessCreation
+ 
+11:45:06 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:45:41 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+11:45:41 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+../main.cpp: In function ‘int main(int, const char**)’:
+../main.cpp:21:31: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:21:50: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:26:36: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+../main.cpp:26:55: warning: comparison with string literal results in unspecified behaviour [-Waddress]
+Finished building: ../main.cpp
+ 
+Building target: ProcessCreation
+Invoking: GCC C++ Linker
+g++  -o "ProcessCreation"  ./main.o   
+Finished building target: ProcessCreation
+ 
+11:45:43 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:52:29 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+11:53:38 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+12:02:55 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+12:02:55 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: ProcessCreation
+Invoking: GCC C++ Linker
+g++  -o "ProcessCreation"  ./main.o   
+Finished building target: ProcessCreation
+ 
+12:02:57 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+12:03:09 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: ProcessCreation
+Invoking: GCC C++ Linker
+g++  -o "ProcessCreation"  ./main.o   
+Finished building target: ProcessCreation
+ 
+12:03:10 **** Incremental Build of configuration Default for project Fraction ****
+make all 
+make: Nothing to be done for `all'.
+12:03:10 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.
+12:03:14 **** Incremental Build of configuration Debug for project ProcessCreation ****
+make all 
+make: Nothing to be done for `all'.

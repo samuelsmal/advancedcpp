@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1384266578 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/connect4/main.cpp
+	<iostream>
+	"connectFour.h"
+	"humanPlayer.h"
+	"computerPlayer.h"
+	"playfield.h"
+
+1384262833 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/connect4/connectFour.h
+	"playfield.h"
+	"_connectFour.impl"
+
+1384257191 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/connect4/playfield.h
+	<stdexcept>
+	<iostream>
+
+1384264378 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/connect4/_connectFour.impl
+	<exception>
+	<stdexcept>
+	<iostream>
+
+1384252856 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/connect4/humanPlayer.h
+	"player.h"
+	<iostream>
+
+1384249555 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/connect4/player.h
+
+1384119146 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/connect4/playfield.cpp
+	"playfield.h"
+
+1384368602 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/connect4/computerPlayer.h
+	<vector>
+	<tuple>
+	"player.h"
+	"_computerPlayer.impl"
+
+1384372600 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/connect4/_computerPlayer.impl
+	<algorithm>
+

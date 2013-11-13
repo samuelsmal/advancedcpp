@@ -1,0 +1,151 @@
+#include <stdexcept>
+#include <cstring>
+#include <stdexcept>
+#include <exception>
+#include <sstream>
+
+// crap...
+using std::string;
+using std::cout;
+using std::endl;
+using std::cin;
+using std::vector;
+
+template <typename T>
+void RPN<T>::startConsole()
+{
+  if (!stack.empty())
+  {
+    printStack();
+  }
+  else
+  {
+    cout << endl;
+  }
+
+  std::string input;
+
+  while (true)
+  {
+    cout << "Command: ";
+    std::getline(cin, input);
+
+    if (!parseInput(input)) return;
+
+    printStack();
+  }
+}
+
+template <typename T>
+void RPN<T>::printStack() {
+  cout << endl;
+  for (size_t i = 0, e = stack.size(); i < e; ++i)
+  {
+    cout << i + 1 << ": " << stack[i] << endl;
+  }
+}
+
+template <typename T>
+void RPN<T>::add() {
+  if (stack.size() < 2) throw std::out_of_range("Not enough elements on stack!");
+
+  T rhs = stack.back();
+  stack.pop_back();
+
+  T lhs = stack.back();
+  stack.pop_back();
+
+  stack.push_back(lhs + rhs);
+}
+
+template <typename T>
+void RPN<T>::subtract() {
+  if (stack.size() < 2) throw std::out_of_range("Not enough elements on stack!");
+
+  T rhs = stack.back();
+  stack.pop_back();
+
+  T lhs = stack.back();
+  stack.pop_back();
+
+  stack.push_back(lhs - rhs);
+}
+
+template <typename T>
+void RPN<T>::multiply() {
+  if (stack.size() < 2) throw std::out_of_range("Not enough elements on stack!");
+
+  T rhs = stack.back();
+  stack.pop_back();
+
+  T lhs = stack.back();
+  stack.pop_back();
+
+  stack.push_back(lhs * rhs);
+}
+
+template <typename T>
+void RPN<T>::divide() {
+  if (stack.size() < 2) throw std::out_of_range("Not enough elements on stack!");
+
+  T rhs = stack.back();
+
+  // Causes errors with std::complex has no operator! or operator bool().
+  if (!rhs) throw std::overflow_error("Divide by zero exception");
+
+  stack.pop_back();
+
+  T lhs = stack.back();
+  stack.pop_back();
+
+  stack.push_back(lhs / rhs);
+}
+
+template <typename T>
+void RPN<T>::pushToStack(T num) {
+  stack.push_back(num);
+}
+
+template <typename T>
+void RPN<T>::popOfStack() {
+  stack.pop_back();
+}
+
+template <typename T>
+bool RPN<T>::parseInput(std::string input)
+{
+  if (input.empty())
+    return false;
+
+  std::string cmd;
+  bool ret_value{true};
+
+  try {
+    std::stringstream ss(input);
+    while (ss >> cmd) {
+      if ((cmd.compare("n") == 0) || (cmd.compare("N") == 0)) {
+        T num;
+        ss >> num;
+        pushToStack(num);
+      } else if (cmd.compare("+") == 0) {
+        add();
+      } else if (cmd.compare("-") == 0) {
+        subtract();
+      } else if (cmd.compare("*") == 0) {
+        multiply();
+      } else if (cmd.compare("/") == 0) {
+        divide();
+      } else if ((cmd.compare("d") == 0) || (cmd.compare("D") == 0)) {
+        popOfStack();
+      } else if ((cmd.compare("q") == 0) || (cmd.compare("Q") == 0)) {
+        ret_value = false;
+      } else {
+        std::cerr << "Invalid command " << cmd << " entered." << std::endl;
+      }
+    }
+  } catch (const std::exception& e) {
+    std::cerr << "Error: " << e.what() << std::endl;
+  }
+
+  return ret_value;
+}

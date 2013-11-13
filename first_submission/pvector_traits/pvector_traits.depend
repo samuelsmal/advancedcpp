@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1384198404 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/pvector_traits/main.cpp
+	<iostream>
+	"pvector.h"
+	<string>
+	<complex>
+
+1384197779 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/pvector_traits/pvector.h
+	<vector>
+	<string>
+	<fstream>
+	<iterator>
+	"persister.h"
+	"_pvector.impl"
+
+1384196462 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/pvector_traits/_pvector.impl
+
+1384198492 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/pvector_traits/persister.h
+	<complex>
+

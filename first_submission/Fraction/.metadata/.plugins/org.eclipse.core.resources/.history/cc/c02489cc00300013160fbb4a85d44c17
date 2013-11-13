@@ -1,0 +1,44 @@
+//
+//  main.cpp
+//  ProcessCreation
+//
+
+
+#include <iostream>
+#include <cstring>
+
+void print_man_page() {
+	std::cout << "ProcessCreation man page:\n    ProcessCreation filename option [string_to_look_for]\n\n"
+			<< "    filename    absolute or relative path\n"
+			<< "    option      either count (alias -c) or search (alias -s)\n"
+			<< "        count,  -c          counts and prints the number of lines in the file\n"
+			<< "        search, -s          expects a valuable regex string.\n\n"
+			<< std::endl;
+}
+
+int main(int argc, const char * argv[])
+{
+
+	if (argc == 3 && (strcmp(argv[2],"-c") || strcmp(argv[2],"count")))
+	{
+		// count the lines.
+		std::cout << "Count the lines" << std::endl;
+	}
+	else if (argc == 4 && (argv[2] == "-s" || argv[2] == "search"))
+	{
+		// search the file.
+		std::cout << "Search the file" << std::endl;
+	}
+	else
+	{
+		print_man_page();
+	}
+
+	for(int i = 0; i < argc ; ++i)
+	{
+		std::cout << i << argv[i] << "\n";
+	}
+	std::cout << argc;
+
+    return 0;
+}

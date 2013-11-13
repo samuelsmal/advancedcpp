@@ -1,0 +1,26 @@
+//
+//  main.cpp
+//  ProcessCreation
+//
+
+
+#include <iostream>
+
+void print_man_page() {
+	std::cout << "ProcessCreation man page:\n    ProcessCreation filename option [string_to_look_for]\n\n"
+			<< "    filename    absolute or relative path\n"
+			<< "    option      either count (alias -c) or search (alias -s)\n"
+			<< "        counts, -c          counts and prints the number of lines in the file\n"
+			<< "        search, -s          expects a valuable regex string.\n\n"
+			<< std::endl;
+}
+
+int main(int argc, const char * argv[])
+{
+	if (argc < 2 )
+	{
+		print_man_page();
+	}
+
+    return 0;
+}

@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1384104053 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/fraction.cpp
+	"fraction.h"
+	"util.h"
+
+1384110793 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/fraction.h
+	<iostream>
+
+1384104021 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/util.h
+
+1384193702 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/main.cpp
+	<iostream>
+	"RPN.h"
+	<complex>
+	"fraction.h"
+
+1384107420 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/RPN.h
+	<vector>
+	<iostream>
+	"pvector.h"
+	"_RPN.impl"
+
+1384108222 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/pvector.h
+	<vector>
+	<string>
+	"_pvector.impl"
+
+1384101228 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/_pvector.impl
+	<fstream>
+	<iterator>
+
+1384103079 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/RPN.cpp
+	"RPN.h"
+	<stdexcept>
+	<cstring>
+
+1384104023 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/util.cpp
+	"util.h"
+
+1384193775 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/_RPN.impl
+	<stdexcept>
+	<cstring>
+	<stdexcept>
+	<exception>
+	<sstream>
+

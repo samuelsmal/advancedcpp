@@ -1,0 +1,53 @@
+#include <vector>
+#include <string>
+#include <fstream>
+
+template <typename T>
+class pvector
+{
+    std::string filename;
+    std::vector<T> v;
+
+    void readVector() {
+        std::ifstream ifs{filename};
+
+
+        while(true) {
+            T x; ifs >> x;
+            if (!ifs.good()) break;
+            v.push_back(x);
+        }
+    }
+
+    void writeVector() {
+        std::ofstream ofs{filename};
+        typename std::vector<T>::const_iterator b_itr = v.begin(), e_itr = v.end();
+
+        if (b_itr != e_itr) {
+            ofs << *b_itr++;
+        }
+
+        while (b_itr != e_itr) {
+            ofs << std::endl << *b_itr++;
+        }
+    }
+
+    public:
+        pvector(std::string fname) : filename(fname) {
+            readVector();
+        };
+        ~pvector() {
+            writeVector();
+        };
+
+        void push_back(const T &el) {
+            v.push_back(el);
+        }
+
+        void pop_back() {
+            if (v.size() > 1)
+                v.pop_back();
+        }
+
+
+};

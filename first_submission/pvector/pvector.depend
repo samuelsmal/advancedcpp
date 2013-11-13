@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1383215581 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/3/pvector/main.cpp
+	<iostream>
+	"pvector.cpp"
+
+1383225198 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/3/pvector/pvector.cpp
+	<vector>
+	<string>
+	<fstream>
+
+1383225198 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/3/pvector/pvector.cpp
+	<vector>
+	<string>
+	<fstream>
+
+1384117548 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/pvector/main.cpp
+	<iostream>
+	"pvector.h"
+
+1384117857 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/pvector/pvector.h
+	<vector>
+	<string>
+	<fstream>
+	<iterator>
+
+1384117629 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/pvector/pvector.h
+	<vector>
+	<string>
+	<fstream>
+

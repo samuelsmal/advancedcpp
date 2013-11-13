@@ -1,0 +1,25 @@
+//
+//  main.cpp
+//  ProcessCreation
+//
+
+
+#include <iostream>
+
+#include "fraction.h"
+#include "test.h"
+
+int main(int argc, const char * argv[])
+{
+
+	if (testfraction())
+	{
+		std::cout << "Everything working fine." << std::endl;
+	}
+	else
+	{
+		std::cout << "Errors occured: Debug!" << std::endl;
+	}
+
+    return 0;
+}

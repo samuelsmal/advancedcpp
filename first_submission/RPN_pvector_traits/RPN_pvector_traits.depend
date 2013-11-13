@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1384104053 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/fraction.cpp
+	"fraction.h"
+	"util.h"
+
+1384110793 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/fraction.h
+	<iostream>
+
+1384104021 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/rpn-template/util.h
+
+1384199440 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/RPN_pvector_traits/main.cpp
+	<iostream>
+	"RPN.h"
+	<complex>
+	"fraction.h"
+
+1384015206 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/Fraction/util.cpp
+	"util.h"
+
+1381867180 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/Fraction/util.h
+
+1384104053 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/RPN_pvector_traits/fraction.cpp
+	"fraction.h"
+	"util.h"
+
+1384110793 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/RPN_pvector_traits/fraction.h
+	<iostream>
+
+1384104021 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/RPN_pvector_traits/util.h
+
+1384107420 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/RPN_pvector_traits/RPN.h
+	<vector>
+	<iostream>
+	"pvector.h"
+	"_RPN.impl"
+
+1384197779 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/RPN_pvector_traits/pvector.h
+	<vector>
+	<string>
+	<fstream>
+	<iterator>
+	"persister.h"
+	"_pvector.impl"
+
+1384198492 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/RPN_pvector_traits/persister.h
+	<complex>
+
+1384196462 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/RPN_pvector_traits/_pvector.impl
+
+1384194003 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/RPN_pvector_traits/_RPN.impl
+	<stdexcept>
+	<cstring>
+	<stdexcept>
+	<exception>
+	<sstream>
+
+1384104023 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/first_submission/RPN_pvector_traits/util.cpp
+	"util.h"
+

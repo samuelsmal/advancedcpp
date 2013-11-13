@@ -1,0 +1,29 @@
+#include <fstream>
+#include <iterator>
+
+template <typename T>
+void pvector<T>::readVector () {
+  std::ifstream ifs{filename};
+
+  std::istream_iterator<T> input{ifs};
+  std::istream_iterator<T> sentinel{};
+
+  if (ifs) {
+    for (; input != sentinel; ++input)
+      v.push_back(*input);
+  }
+}
+
+template <typename T>
+void pvector<T>::writeVector() {
+    std::ofstream ofs{filename};
+    typename std::vector<T>::const_iterator b_itr = v.begin(), e_itr = v.end();
+
+    if (b_itr != e_itr) {
+        ofs << *b_itr++;
+    }
+
+    while (b_itr != e_itr) {
+        ofs << std::endl << *b_itr++;
+    }
+}

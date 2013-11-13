@@ -1,0 +1,69 @@
+//
+//  fraction.cpp
+//  Fraction
+//
+//  Created by s0991462 on 9/24/13.
+//  Copyright (c) 2013 SVB. All rights reserved.
+//
+
+#include "fraction.h"
+
+int Fraction::gcd(int a, int b) {
+    if (a < 0)
+    {
+        a *= -1;
+    }
+
+    if (b < 0)
+    {
+        b *= -1;
+    }
+    int t;
+    while (b != 0) {
+        t = b;
+        b = a % t;
+        a = t;
+    }
+    return t;
+}
+
+Fraction Fraction::reduce() {
+    return Fraction::reduce(*this);
+}
+
+// TODO: Make reduction only if counter % 2 && denom % 2
+Fraction Fraction::reduce(const Fraction f) {
+    int gcd = Fraction::gcd(f.counter, f.denom);
+    return Fraction(f.counter / gcd, f.denom / gcd);
+}
+
+Fraction Fraction::operator+(Fraction rhs) {
+    return reduce(Fraction(
+        (*this).counter * rhs.denom + (*this).denom * rhs.counter, 
+        (*this).denom * rhs.denom
+    ));
+}
+
+Fraction Fraction::operator-(Fraction rhs) {
+    return (*this) + Fraction(-1 * rhs.counter, rhs.denom);
+}
+
+Fraction Fraction::operator*(Fraction rhs) {
+    return reduce(Fraction(counter * rhs.counter, denom * rhs.denom));
+}
+
+Fraction Fraction::operator/(Fraction rhs) {
+    return (*this) * Fraction(rhs.denom, rhs.counter);
+}
+
+bool Fraction::operator==(Fraction rhs) {
+    Fraction lhs_reduced = reduce((*this));
+    Fraction rhs_reduced = reduce(rhs);
+    
+    return (lhs_reduced.counter == rhs_reduced.counter) && (lhs_reduced.denom == rhs_reduced.denom);
+}
+
+std::ostream& operator<< (std::ostream& stream, const Fraction& Fraction) {
+    return stream << Fraction.counter << "/" << Fraction.denom;
+}
+

@@ -1,0 +1,17 @@
+//  The implementation file of the pset template class.
+//  To be included in the .h-file of the pset template class.
+
+// Doesn't function... wierd error.
+// persister not declared, and default argument for template parameter for class enclosing
+
+template <typename T, typename P>
+void pset<T, P>::readSet () {
+  std::ifstream ifs{filename};
+  persister::readInData(ifs, s);
+}
+
+template <typename T, typename P>
+void pset<T, P>::writeSet() {
+  std::ofstream ofs{filename};
+  persister::writeOutData(ofs, s);
+}

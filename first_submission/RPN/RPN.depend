@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1383223553 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/3/RPN/main.cpp
+	<iostream>
+	"RPN.h"
+
+1383223499 /home/samuel/Documents/UZH/HS13/advanced c++/exercises/3/RPN/RPN.h
+	<vector>
+	<iostream>
+
+1383225021 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/3/RPN/RPN.cpp
+	"RPN.h"
+	<stdexcept>
+	<cstring>
+
