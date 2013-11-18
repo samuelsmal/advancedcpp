@@ -1,3 +1,0 @@
-main.o: main.cpp fraction.h
-fraction.o: fraction.cpp fraction.h util.h
-util.o: util.cpp util.h

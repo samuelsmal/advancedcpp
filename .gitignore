@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 *.workspace
 *.workspace.layout
 
-=======
->>>>>>> 2ac4d817245237d05f28496c2f36a94f02be9d40
 # Compiled Object files
 *.slo
 *.lo
@@ -17,8 +14,11 @@
 *.lai
 *.la
 *.a
-<<<<<<< HEAD
 
 *.depend
-=======
->>>>>>> 2ac4d817245237d05f28496c2f36a94f02be9d40
+
+*.pdf
+*.cbp
+*.layout
+
+/bin
