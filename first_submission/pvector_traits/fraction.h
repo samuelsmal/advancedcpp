@@ -5,15 +5,11 @@
 //  Created by s0991462 on 9/24/13.
 //  Copyright (c) 2013 SVB. All rights reserved.
 //
-//  Works with int as internal numbers.
-//  Doesn't reduce automatically, since this would conflict with my understanding of how c++ works. (Has of course the function.)
-//  TODO: Make _counter and _denom unsigned and use a bool _isNegativ.
 
 #ifndef __Fraction__Fraction__
 #define __Fraction__Fraction__
 
 #include <iostream>
-
 
 class Fraction {
     int _counter, _denom;

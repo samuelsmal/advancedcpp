@@ -83,10 +83,10 @@ int computerPlayer<F>::play(const F &field) {
         }
       }
 
-      if (max_of_column_player == 3 || max_of_column_opponent == 4) return x;
+      if (max_of_column_player == 3 || max_of_column_opponent == 3) return x;
 
       weighted_cols.push_back(std::make_tuple(max_of_column_player, max_of_column_opponent, x));
-      std::cout << " " << max_of_column_player << max_of_column_opponent << " |";
+      //std::cout << " " << max_of_column_player << max_of_column_opponent << " |";
 
     }
   }

@@ -39,6 +39,10 @@ public:
     return v.empty();
   }
 
+  const T& front() const {
+    return v.front();
+  }
+
   const T& back() const {
     return v.back();
   }

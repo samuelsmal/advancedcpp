@@ -20,20 +20,8 @@ class pvector {
     std::string filename;
     std::vector<T> v;
 
-void readVector();
-void writeVector();/*
-    void readVector() {
-      std::ifstream ifs{filename};
-      if(!persister::readInData(ifs, v)) {
-        std::cerr << "Error in reading data." << std::endl;
-      }
-    }
-    void writeVector() {
-      std::ofstream ofs{filename};
-      if (!persister::writeOutData(ofs, v)) {
-        std::cerr << "Error in writing data." << std::endl;
-      }
-    }*/
+    gvoid readVector();
+    void writeVector();
 
   public:
     pvector(std::string fname) : filename {fname}, v {} {

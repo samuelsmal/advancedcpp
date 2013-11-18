@@ -1,9 +1,1 @@
 # depslib dependency file v1.0
-1384010455 source:/home/samuel/Documents/UZH/HS13/advanced c++/exercises/3/SpellChecker/spellchecker.cpp
-	<iostream>
-	<fstream>
-	<algorithm>
-	<iterator>
-	<set>
-	<regex>
-

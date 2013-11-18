@@ -2,20 +2,16 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="pvector_traits" />
+		<Option title="RectAndSquares" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/pvector_traits" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/RectAndSquares" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-Weffc++" />
-					<Add option="-pedantic" />
-					<Add option="-std=c++11" />
-					<Add option="-Wall" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -24,13 +20,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="fraction.cpp" />
-		<Unit filename="fraction.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="persister.h" />
-		<Unit filename="pvector.h" />
-		<Unit filename="util.cpp" />
-		<Unit filename="util.h" />
+		<Unit filename="rectangle.h" />
+		<Unit filename="square.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />

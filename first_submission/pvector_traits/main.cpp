@@ -1,7 +1,9 @@
 #include <iostream>
-#include "pvector.h"
 #include <string>
 #include <complex>
+
+#include "pvector.h"
+#include "fraction.h"
 
 int main()
 {
@@ -10,6 +12,11 @@ int main()
   v.push_back("Halll ooooooo oooooo ooooo");
   v.push_back("pushed back");
   v.pop_back();
+
+  pvector<Fraction> pv_fraction{"fraction.pv"};
+  pv_fraction.push_back({1,2});
+  pv_fraction.push_back({3,4});
+  pv_fraction.pop_back();
 
   pvector<std::complex<double>> pv_complex_double {"complex_double.txt"};
   pv_complex_double.push_back({1.12,2.23});

@@ -114,6 +114,7 @@ inline std::ostream& operator<< (std::ostream& stream, const Fraction& Fraction)
   return stream << Fraction.counter() << "/" << Fraction.denom();
 }
 
+// Should throw something. Not sure what and how to check.
 inline std::istream& operator>> (std::istream& stream, Fraction& obj) {
   int c, d;
   char t;
