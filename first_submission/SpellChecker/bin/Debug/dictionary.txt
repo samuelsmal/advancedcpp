@@ -1,2 +1,0 @@
-the first being the filename of a dictionary containing a list of correctly
-spelled words
