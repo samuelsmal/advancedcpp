@@ -26,3 +26,9 @@
 bin/
 
 /.metadata
+
+# Xcode project files
+.xcodeproj
+
+# Backup files
+*~
