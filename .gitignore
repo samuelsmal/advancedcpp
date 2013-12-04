@@ -25,10 +25,20 @@
 
 bin/
 
-/.metadata
+/.metadata/
 
-# Xcode project files
-.xcodeproj
+
+
 
 # Backup files
 *~
+
+# Xcode project files and mac
+.DS_Store
+.Trashes
+*~.nib
+*.swp
+*.xcodeproj/
+DerivedData/
+build/
+
