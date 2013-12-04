@@ -41,7 +41,7 @@ int connectFour<PlayerOneType, PlayerTwoType>::checkPlayfield() {
         if (block_value) return block_value;
       }
 
-      // Diagonal
+      // Diagonal, in both directions.
       if (y < 3) {
         if (x < 4) {
           block_value = checkPlayfieldBlock(x, y, 1, 1);
