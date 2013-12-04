@@ -26,7 +26,6 @@ int connectFour<PlayerOneType, PlayerTwoType>::checkPlayfieldBlock(int x, int y,
 template <typename PlayerOneType,   // PlayerOneType models the first player.
           typename PlayerTwoType>
 int connectFour<PlayerOneType, PlayerTwoType>::checkPlayfield() {
-  // Very stupid checking... must be improved.
   int block_value;
 
   for (int x = 0; x < playfield::width; ++x) {
@@ -43,9 +42,17 @@ int connectFour<PlayerOneType, PlayerTwoType>::checkPlayfield() {
       }
 
       // Diagonal
-      if (x < 4 && y < 3) {
-        block_value = checkPlayfieldBlock(x, y, 1, 1);
-        if (block_value) return block_value;
+      if (y < 3) {
+        if (x < 4) {
+          block_value = checkPlayfieldBlock(x, y, 1, 1);
+          if (block_value) return block_value;
+        }
+        
+        if (x > 2) {
+          block_value = checkPlayfieldBlock(x, y, -1, 1);
+          if (block_value) return block_value;
+        }
+
       }
     }
   }

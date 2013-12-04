@@ -3,7 +3,6 @@
 
 #include "playfield.h"
 
-export
 template <typename PlayerOneType,   // PlayerOneType models the first player.
           typename PlayerTwoType>   // PlayerTwoType models the second player.
 class connectFour {

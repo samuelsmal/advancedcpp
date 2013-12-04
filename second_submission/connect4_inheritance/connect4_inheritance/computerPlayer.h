@@ -19,7 +19,6 @@ struct {
     }
 } sort_second;
 
-export
 template <typename F>
 class computerPlayer : public player<F> {
  public:

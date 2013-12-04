@@ -7,7 +7,8 @@ int computerPlayer<F>::numberOfNeighboors(int x, int y, int delta_x, int delta_y
   x += delta_x; y += delta_y;
 
   for (int steps {0};
-       steps < 3 && x < width_of_field && x >= 0 && y < height_of_field && y >= 0;
+       steps < 3 && x < width_of_field && x >= 0
+         && y < height_of_field && y >= 0;
        x += delta_x, y += delta_y, ++steps)
   {
     if (field.stoneat(x, y) != colour) {
