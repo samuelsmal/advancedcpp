@@ -8,5 +8,4 @@ int main() {
   humanPlayer<playfield> p1, p2;
   connectFour<humanPlayer<playfield>, computerPlayer<playfield>> game{};
   game.startGame();
-
 }

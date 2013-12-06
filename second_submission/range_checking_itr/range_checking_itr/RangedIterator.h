@@ -11,31 +11,77 @@
 
 #include <exception>
 #include <stdexcept>
+#include <iterator>
 
 template <typename Itr>
 class RangedIterator {
-    const Itr begin, end;
-    Itr current_position;
-    
+  const Itr begin, end;
+  Itr current_position;
+  
+  using value_type = typename std::iterator_traits<Itr>::value_type;
+  using pointer = typename std::iterator_traits<Itr>::pointer;
+  using reference = typename std::iterator_traits<Itr>::reference;
+  
 public:
-    RangedIterator(Itr b, Itr e)
+  RangedIterator(Itr b, Itr e)
     : begin{b}, end{e}, current_position{b} {}
-    
-    RangedIterator& operator++() {
-        if (current_position != end) {
-            current_position++;
-            return *this;
-        } else {
-            throw std::out_of_range("Out of bounds error!");
-        }
+  
+  RangedIterator(Itr b, Itr e, Itr pos)
+    : begin{b}, end{e}, current_position{pos} {}
+  
+  RangedIterator& operator++() {
+    if (current_position != end) {
+      current_position++;
+      return *this;
+    } else {
+      throw std::out_of_range("Out of bounds error (Overshot)!");
     }
-    
-    RangedIterator& operator++(int) {
-        // What now?
-        // RangedIterator old {current_position};
-        operator++();
-        return *this;
+  }
+  
+  RangedIterator& operator++(int) {
+    RangedIterator old (begin, end, current_position);
+    operator++();
+    return *this;
+  }
+  
+  RangedIterator& operator--() {
+    if (current_position != begin) {
+      current_position--;
+      return *this;
+    } else {
+      throw std::out_of_range("Out of bounds error (Undershot)!");
     }
+  }
+  
+  RangedIterator& operator--(int) {
+    RangedIterator old (begin, end, current_position);
+    operator--();
+    return *this;
+  }
+  
+  value_type operator*() {
+    return *current_position;
+  }
+  
+  pointer operator->() {
+    return &*current_position;
+  }
+  
+  friend inline bool operator==(const RangedIterator<Itr>& lhs, const RangedIterator<Itr>& rhs);
+  friend inline bool operator!=(const RangedIterator<Itr>& lhs, const RangedIterator<Itr>& rhs);
 };
+
+template <typename Itr>
+inline bool operator==(const RangedIterator<Itr>& lhs, const RangedIterator<Itr>& rhs) {
+  return lhs.begin == rhs.begin
+    && lhs.end == rhs.end
+    && lhs.current_position == rhs.currentposition;
+}
+
+template <typename Itr>
+inline bool operator!=(const RangedIterator<Itr>& lhs, const RangedIterator<Itr>& rhs) {
+  return !(lhs == rhs);
+}
+
 
 #endif
