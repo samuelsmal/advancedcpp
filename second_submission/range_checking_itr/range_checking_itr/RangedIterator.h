@@ -5,6 +5,8 @@
 //  Created by Samuel von Bausznern on 04.12.13.
 //  Copyright (c) 2013 Samuel von Bausznern. All rights reserved.
 //
+//  This is a iterator wrapper, which checks for out-of-bounds erros.
+//  I find it very hard to think through. Lots of pointer arithmetics.
 
 #ifndef range_checking_itr_RangedIterator_h
 #define range_checking_itr_RangedIterator_h
@@ -19,8 +21,8 @@ class RangedIterator {
   Itr current_position;
   
   using value_type = typename std::iterator_traits<Itr>::value_type;
-  using pointer = typename std::iterator_traits<Itr>::pointer;
-  using reference = typename std::iterator_traits<Itr>::reference;
+  using pointer    = typename std::iterator_traits<Itr>::pointer;
+  using reference  = typename std::iterator_traits<Itr>::reference;
   
 public:
   RangedIterator(Itr b, Itr e)

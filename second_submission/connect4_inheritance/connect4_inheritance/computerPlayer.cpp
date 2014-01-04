@@ -1,7 +1,6 @@
  #include <algorithm>
 
-template <typename F>
-int computerPlayer<F>::numberOfNeighboors(int x, int y, int delta_x, int delta_y, int colour, const F& field) {
+int computerPlayer::numberOfNeighboors(int x, int y, int delta_x, int delta_y, int colour, const F& field) {
   int found {0};
 
   x += delta_x; y += delta_y;
@@ -20,8 +19,7 @@ int computerPlayer<F>::numberOfNeighboors(int x, int y, int delta_x, int delta_y
   return found;
 }
 
-template <typename F>
-int computerPlayer<F>::weightOfPlace(int x, int y, int colour, const F& field) {
+int computerPlayer::weightOfPlace(int x, int y, int colour, const F& field) {
   int weight {0}, current_weight {0};
 
   for (int i_x {-1}; i_x < 2; ++i_x) {
@@ -41,8 +39,7 @@ int computerPlayer<F>::weightOfPlace(int x, int y, int colour, const F& field) {
   return weight;
 }
 
-template <typename F>
-int computerPlayer<F>::countOnes (const F& field) {
+int computerPlayer::countOnes (const F& field) {
   int num_of_stones {0};
 
   for (int x {0}; x < width_of_field; ++x) {
@@ -54,8 +51,7 @@ int computerPlayer<F>::countOnes (const F& field) {
   return num_of_stones;
 }
 
-template <typename F>
-int computerPlayer<F>::play(const F &field) {
+int computerPlayer::play(const F &field) {
   if (first_round) {
     if (countOnes(field) == 0) {
       colour_of_opponent = 2;
@@ -79,16 +75,17 @@ int computerPlayer<F>::play(const F &field) {
           tmp_max_player = weightOfPlace(x, y, colour_of_player, field);
           tmp_max_opponent = weightOfPlace(x, y, colour_of_opponent, field);
 
-          if (max_of_column_player < tmp_max_player) max_of_column_player = tmp_max_player;
-          if (max_of_column_opponent < tmp_max_opponent) max_of_column_opponent = tmp_max_opponent;
+          if (max_of_column_player < tmp_max_player)
+            max_of_column_player = tmp_max_player;
+          if (max_of_column_opponent < tmp_max_opponent)
+            max_of_column_opponent = tmp_max_opponent;
         }
       }
 
       if (max_of_column_player == 3 || max_of_column_opponent == 3) return x;
 
-      weighted_cols.push_back(std::make_tuple(max_of_column_player, max_of_column_opponent, x));
-      //std::cout << " " << max_of_column_player << max_of_column_opponent << " |";
-
+      weighted_cols.push_back(
+         std::make_tuple(max_of_column_player, max_of_column_opponent, x));
     }
   }
 

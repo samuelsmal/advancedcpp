@@ -4,10 +4,9 @@
 #include "player.h"
 #include <iostream>
 
-template<typename F>
-class humanPlayer : public player<F> {
+class humanPlayer : public player {
  public:
-  int play(const F &field) {
+  int play(const playfield &field) {
     std::cout << "Your move? ";
     int move;
     std::cin >> move;

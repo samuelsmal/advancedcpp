@@ -6,14 +6,15 @@
 template <typename PlayerOneType,   // PlayerOneType models the first player.
           typename PlayerTwoType>   // PlayerTwoType models the second player.
 class connectFour {
+  using color_t = int;
  private:
-  playfield pf;
+    playfield pf;
   PlayerOneType playerOne;
   PlayerTwoType playerTwo;
 
   int checkPlayfield(); // Returns 0 if nobody won, 1 if playerOne or 2 if playerTwo has won.
   int checkPlayfieldBlock(int x, int y, int delta_x, int delta_y); // Same as checkPlayfield but for the internal block.
-  bool tryMove(int x, int player);
+  bool tryMove(int column, color_t player_colour);
   void printPlayfield();
  public:
   connectFour() : pf{} {};

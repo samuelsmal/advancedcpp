@@ -37,7 +37,7 @@ class playfield {
       return rep[x][y];
     }
 
-    void insertStone(int x, int y, int player) {
+    virtual void insertStone(int x, int y, int player) {
       if (x < 0 || x >= width || y < 0 || y > height) {
         throw std::out_of_range("No such place in playfield!");
       }

@@ -5,7 +5,7 @@
 template <typename PlayerOneType,   // PlayerOneType models the first player.
           typename PlayerTwoType>
 int connectFour<PlayerOneType, PlayerTwoType>::checkPlayfieldBlock(int x, int y, int delta_x, int delta_y) {
-  int ret_val = 0, player{1};
+  int ret_val {0}, player{1};
 
   while(!ret_val && player < 3) {
     for(int steps = 0; steps < 4; ++steps, x += delta_x, y += delta_y) {
@@ -28,6 +28,8 @@ template <typename PlayerOneType,   // PlayerOneType models the first player.
 int connectFour<PlayerOneType, PlayerTwoType>::checkPlayfield() {
   int block_value;
 
+  // Checks from top to down.
+
   for (int x = 0; x < playfield::width; ++x) {
     for (int y = 0; y < playfield::height; ++y) {
       // Horizontal
@@ -42,7 +44,7 @@ int connectFour<PlayerOneType, PlayerTwoType>::checkPlayfield() {
       }
 
       // Diagonal, in both directions.
-      if (y < 3) {
+      if (y < 4) {
         if (x < 4) {
           block_value = checkPlayfieldBlock(x, y, 1, 1);
           if (block_value) return block_value;
@@ -62,20 +64,23 @@ int connectFour<PlayerOneType, PlayerTwoType>::checkPlayfield() {
 
 template <typename PlayerOneType,   // PlayerOneType models the first player.
           typename PlayerTwoType>
-bool connectFour<PlayerOneType, PlayerTwoType>::tryMove(int x, int player) {
+bool connectFour<PlayerOneType, PlayerTwoType>::tryMove(int column, color_t player_colour) {
   bool return_value{true};
 
   try {
-    if (pf.stoneat(x, 0) != 0)
-    throw std::logic_error("Alread full");
+    if (pf.stoneat(column, 0) != 0)
+      throw std::logic_error("Already full");
+    
+    if(player_colour != 1 && player_colour != 2)
+      throw std::logic_error("No such player possible!");
 
-    int tmp_y{playfield::height - 1};
+    int tmp_row{playfield::height - 1};
 
-    while (pf.stoneat(x, tmp_y) != 0) {
-      --tmp_y;
+    while (pf.stoneat(column, tmp_row) != 0) {
+      --tmp_row;
     }
 
-    pf.insertStone(x, tmp_y, player);
+    pf.insertStone(column, tmp_row, player_colour);
 
   } catch (const std::exception &e) {
     std::cout << "Error: " << e.what() << std::endl;
@@ -88,22 +93,22 @@ bool connectFour<PlayerOneType, PlayerTwoType>::tryMove(int x, int player) {
 template <typename PlayerOneType,   // PlayerOneType models the first player.
           typename PlayerTwoType>
 void connectFour<PlayerOneType, PlayerTwoType>::startGame() {
-  int currentPlayer{1};
+  int current_player{1};
 
   pf.print();
   int playerWon{0};
 
   while(!playerWon) {
-    if (currentPlayer == 1) {
-      if (tryMove(playerOne.play(pf), currentPlayer)) {
-        currentPlayer = 2;
+    if (current_player == 1) {
+      if (tryMove(playerOne.play(pf), current_player)) {
+        current_player = 2; // For the next round.
       } else {
         std::cerr << "Couldn't place stone!" << std::endl;
       }
 
     } else {
-      if (tryMove(playerTwo.play(pf), currentPlayer)) {
-        currentPlayer = 1;
+      if (tryMove(playerTwo.play(pf), current_player)) {
+        current_player = 1; // For the next round.
       } else {
         std::cerr << "Couldn't place stone!" << std::endl;
       }

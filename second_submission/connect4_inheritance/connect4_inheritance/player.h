@@ -1,7 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-template<typename F>
+#include "playfield.h"
+
 class player {
  public:
 // returns the column where the player decides to throw in his
@@ -10,7 +11,8 @@ class player {
 // the stoneat method, if you expect a different class because
 // you need methods to verify whether the opponent can win,
 // copy the field into the class that you expect.
-  virtual int play(const F &field) =0;
+  virtual int play(const playfield &field) =0;
+  virtual ~player() {}
 };
 
 #endif // PLAYER_H
