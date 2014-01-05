@@ -14,11 +14,11 @@
 namespace AI_Util {
   typedef int colour_t;
   
-  int measureDirection(const AI_playfield& field, int x, int y, int d_x, int d_y, colour_t colour);
+  double measureDirection(const AI_playfield& field, int x, int y, int d_x, int d_y, colour_t colour);
   
-  int measureStone(const AI_playfield& field, int x, int y, colour_t colour);
+  double measureStone(const AI_playfield& field, int x, int y, colour_t colour);
   
-  int playfieldEvaluation(const AI_playfield& field, colour_t colour);
+  double playfieldEvaluation(const AI_playfield& field, colour_t colour);
   
   // Checks if anybody has won.
   bool terminalPlayfield(const AI_playfield& pf, colour_t firstPlayerColour, colour_t secondPlaycerColour);

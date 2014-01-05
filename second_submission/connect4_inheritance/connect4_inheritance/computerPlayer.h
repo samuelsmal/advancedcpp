@@ -5,46 +5,32 @@
 #include <tuple>
 
 #include "player.h"
-
-
-struct {
-    bool operator()(const std::tuple<int,int,int> &left,
-                    const std::tuple<int,int,int> &right) {
-        return std::get<0>(left) < std::get<0>(right);
-    }
-} sort_first;
-
-struct {
-    bool operator()(const std::tuple<int,int,int> &left,
-                    const std::tuple<int,int,int> &right) {
-        return std::get<1>(left) < std::get<1>(right);
-    }
-} sort_second;
+#include "playfield.h"
 
 class computerPlayer : public player {
-  using F = playfield;
  public:
     computerPlayer() : weighted_cols{} {}; // Initializing to zero.
 
-    int play(const F &field);
+    int play(const playfield &field);
  private:
-    int width_of_field {F::width};
-    int height_of_field {F::height};
+    int width_of_field {playfield::width};
+    int height_of_field {playfield::height};
 
-    int weightOfPlace(int x, int y, int colour, const F& field);
-    int numberOfNeighboors(int x, int y,
-                           int delta_x, int delta_y,
-                           int colour, const F& field);
+    int weightOfPlace(int x, int y, int colour, const playfield& field);
+    int measureDirection(int x, int y,
+                         int delta_x, int delta_y,
+                         int colour, const playfield& field);
 
     int colour_of_player;
     int colour_of_opponent;
 
     bool first_round {true};
-    int countOnes(const F& field);
+    int countOnes(const playfield& field);
 
     // First:  Weight for player
     // Second: Weight for opponent
     // Third:  Column
-    std::vector<std::tuple<int, int, int>> weighted_cols;
+    using weight = std::tuple<int, int, int>;
+    std::vector<weight> weighted_cols;
 };
 #endif // COMPUTERPLAYER_H

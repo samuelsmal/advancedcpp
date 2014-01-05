@@ -2,11 +2,12 @@
 
 #include "connectFour.h"
 #include "humanPlayer.h"
-#include "computerPlayer.h"
 #include "playfield.h"
 
 #include "AI_AlphaBetaPruning.h"
 #include "MiniMaxPlayer.h"
+#include "computerPlayer.h"
+#include "computerPlayer.cpp"
 
 #include "testField.h"
 

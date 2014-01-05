@@ -9,6 +9,7 @@
 #include <iostream>
 
 #include "smart_pointer.h"
+#include "dumb_pointer.h"
 
 using namespace std;
 using namespace pointer;
@@ -24,26 +25,25 @@ public:
   }
 };
 
-int main(int argc, const char * argv[])
-{
+void SmartPointerTest() {
   cout << "Smart pointer test" << endl;
   
   DummyObject *o1 = new DummyObject(1);
   DummyObject *o2 = new DummyObject(2);
   
-  smart_pointer<DummyObject> p(o1);
+  SmartPointer<DummyObject> p(o1);
   cout << p.counter() << endl;
   
-  smart_pointer<DummyObject> q(p);
+  SmartPointer<DummyObject> q(p);
   
   cout << p.counter() << " " << q.counter() << endl;
   
-  smart_pointer<DummyObject> r(o2);
+  SmartPointer<DummyObject> r(o2);
   cout << r.counter() << endl;
   
   q = r;
   
-  smart_pointer<DummyObject> s(new DummyObject(3));
+  SmartPointer<DummyObject> s(new DummyObject(3));
   
   cout << p.counter() << endl;
   cout << q.counter() << endl;
@@ -64,7 +64,32 @@ int main(int argc, const char * argv[])
   q->memberFunction();
   r->memberFunction();
   s->memberFunction();
+}
+
+void DumbPointerTest() {
+  cout << "Dumb pointer test" << endl;
   
+  DummyObject *o1 = new DummyObject(1);
+  
+  DumbPointer<DummyObject> dp1 (o1);
+  DumbPointer<DummyObject> dp2 (dp1);
+  
+  dp1->memberFunction();
+  dp2->memberFunction();
+  
+  DumbPointer<DummyObject> dp3 (new DummyObject(2));
+  
+  dp3->memberFunction();
+  
+  dp3.deletePointee();
+  delete o1;
+  
+}
+
+int main(int argc, const char * argv[])
+{
+  SmartPointerTest();
+  DumbPointerTest();
   return 0;
 }
 

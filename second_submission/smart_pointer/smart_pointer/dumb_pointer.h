@@ -18,12 +18,22 @@ class DumbPointer {
   typedef T* PointerType;
   typedef T& ReferenceType;
   
+  StoredType pointee;
+  
 public:
   explicit DumbPointer(StoredType obj) : pointee(obj) {};
   
-  DumbPointer(DumbPointer& another) : pointee(*another) {};
+  DumbPointer(const DumbPointer<T>& another) : pointee(another.pointee) {};
   
-  ~DumbPointer();
+  DumbPointer& operator=(const DumbPointer<T>& dp) {
+    pointee = dp.pointee;
+  }
+  
+  
+  // Either that or a cast. Which would be even dumber.
+  void deletePointee() {
+    delete pointee;
+  }
   
   ReferenceType operator*()  const {return *pointee;}
   PointerType   operator->() const {return pointee;}

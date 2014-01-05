@@ -21,25 +21,47 @@ int AI_AlphaBetaPruning::play(const playfield &pf) {
   
   ai_pf = pf;
   
-  vector<AI_playfield> children (playfield::width);
-  vector<WeightedColumn> weights (playfield::width);
+  vector<AI_playfield> children (playfield::width, ai_pf);
+  vector<WeightedColumn> weights (playfield::width, {-1, std::numeric_limits<double>::min()});
   
-  for (int col {0}; col < playfield::width; ++col) {
+  // Adding a heuristic value specific to the column.
+  // 0  1   2   3   4   5   6
+  // 0 0.1 0.2 0.3 0.2 0.1  0
+  weights.at(0).weight = 0;
+  weights.at(1).weight = 0.1;
+  weights.at(2).weight = 0.2;
+  weights.at(3).weight = 0.3;
+  weights.at(4).weight = 0.2;
+  weights.at(5).weight = 0.1;
+  weights.at(6).weight = 0;
+  
+  
+  auto itr_weights = begin(weights);
+  auto itr_children = begin(children);
+  
+  for (int col {0}; col < playfield::width; ++col, ++itr_children, ++itr_weights) {
     if (pf.stoneat(col, 0) == 0) {
-      AI_playfield child (pf);
-      child.insertStone(col, colour_player);
-      children.at(col) = child;
+      itr_children->insertStone(col, colour_player);
       
-      weights.at(col).column = col;
-      weights.at(col).weight = alphaBetaEvaluation(child, max_depth, INT_MIN, INT_MAX, true);
+      itr_weights->column = col;
+      itr_weights->weight += alphaBetaEvaluation(*itr_children, max_depth, std::numeric_limits<double>::min(), std::numeric_limits<double>::max(), true);
+    } else {
+      weights.erase(itr_weights);
+      children.erase(itr_children);
     }
   }
   
-  std::sort(weights.begin(), weights.end(),
+  std::sort(begin(weights), end(weights),
             [](const WeightedColumn& a, const WeightedColumn& b) {
               return a.weight < b.weight;
             });
-  return weights.end()->column;
+  
+  for (auto w : weights) {
+    std::cout << w.weight << " " << w.column << std::endl;
+  }
+  
+  
+  return weights.back().column;
 }
 
 void AI_AlphaBetaPruning::initColours(const playfield &pf) {
@@ -60,7 +82,7 @@ void AI_AlphaBetaPruning::initColours(const playfield &pf) {
   }
 }
 
-int AI_AlphaBetaPruning::heuristicEvaluation(const AI_playfield &pf, bool maximizingPlayer) {
+double AI_AlphaBetaPruning::heuristicEvaluation(const AI_playfield &pf, bool maximizingPlayer) {
   // Count the patterns. "x_xx" => 3, "xxx_xx" => 5, but "xoxx" => 2,...
   if (maximizingPlayer) {
     return AI_Util::playfieldEvaluation(pf, colour_player);
@@ -69,7 +91,7 @@ int AI_AlphaBetaPruning::heuristicEvaluation(const AI_playfield &pf, bool maximi
   }
 }
 
-int AI_AlphaBetaPruning::alphaBetaEvaluation(const AI_playfield &pf, int depth, int alpha, int beta, bool maximizingPlayer) {
+double AI_AlphaBetaPruning::alphaBetaEvaluation(const AI_playfield &pf, int depth, double alpha, double beta, bool maximizingPlayer) {
   if (depth == 0 || AI_Util::terminalPlayfield(pf, colour_player, colour_opponent)) {
     return heuristicEvaluation(pf, maximizingPlayer);
   }
