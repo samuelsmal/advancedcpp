@@ -118,6 +118,20 @@ void RPN<T>::divide() {
 }
 
 template <typename T>
+T RPN<T>::getMin() {
+  if (stack.size() == 0) throw std::out_of_range("Not enough elements on stack!");
+  
+  auto smallest = *begin(stack); // Kinda unnecessary.
+  
+  for_each(begin(stack), end(stack), [&smallest](const T& e){
+    if (e < smallest) {
+      smallest = e;
+    }
+  });
+  return smallest;
+}
+
+template <typename T>
 void RPN<T>::pushToStack(T num) {
   stack.push_back(num);
 }
@@ -169,8 +183,8 @@ bool RPN<T>::parseInput(std::string input)
         } else {
           std::cerr << "Invalid command f" << cmd << " entered." << std::endl;
         }
-
-            
+      } else if ((cmd.compare("m") == 0) || (cmd.compare("M") == 0)) {
+        cout << getMin() << endl;
       } else {
         std::cerr << "Invalid command " << cmd << " entered." << std::endl;
       }

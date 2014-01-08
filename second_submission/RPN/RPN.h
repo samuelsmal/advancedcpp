@@ -31,7 +31,7 @@ class RPN {
   void pushToStack(T num);
   void popOfStack();
   
-  
+  T getMin();
 
   void startConsole();
 };

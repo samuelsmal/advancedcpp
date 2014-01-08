@@ -12,28 +12,19 @@ template <typename T,                // T models the type of the vector.
           typename P = Persister<T>> // P Models the type of the persister (see read and write).
 class pvector {
   private:
-    typedef P persister;
-    typedef typename std::vector<T>::iterator iterator;
-    typedef typename std::vector<T>::const_iterator const_iterator;
+    using persister = P;
+    using iterator = typename std::vector<T>::iterator;
+    using const_iterator = typename std::vector<T>::const_iterator;
 
     std::string filename;
     std::vector<T> v;
 
-void readVector();
-void writeVector();/*
-    void readVector() {
-      std::ifstream ifs{filename};
-      if(!persister::readInData(ifs, v)) {
-        std::cerr << "Error in reading data." << std::endl;
-      }
-    }
-    void writeVector() {
-      std::ofstream ofs{filename};
-      if (!persister::writeOutData(ofs, v)) {
-        std::cerr << "Error in writing data." << std::endl;
-      }
-    }*/
-
+    void readVector();
+    void writeVector();
+  
+    pvector(const pvector&) = delete;
+    pvector operator= (const pvector&) = delete;
+  
   public:
     pvector(std::string fname) : filename {fname}, v {} {
       readVector();

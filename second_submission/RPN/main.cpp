@@ -1,7 +1,6 @@
 #include <iostream>
 #include "RPN.h"
 #include <complex> // Doesn't compile. See RPN<T>::divide().
-#include "fraction.h"
 
 int main(int argc, char** argv)
 {
