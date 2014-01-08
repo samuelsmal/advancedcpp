@@ -20,6 +20,6 @@ void runTests() {
 int main() {
   runTests();
   
-  connectFour<humanPlayer, AI_AlphaBetaPruning> game{};
+  connectFour<humanPlayer, computerPlayer> game{};
   game.startGame();
 }

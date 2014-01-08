@@ -26,12 +26,10 @@ class AI_AlphaBetaPruning : public player {
   colour_t colour_player;
   colour_t colour_opponent;
   
-  const int max_depth {1}; // Should be set to what not. 42? Much to slow...
+  const int max_depth {0}; // Should be set to what not. 42? Much to slow...
   
   bool first_round {true};
   void initColours(const playfield&);
-  
-  AI_playfield ai_pf;
   
   bool terminalPlayfield(const AI_playfield& pf);
   double heuristicEvaluation(const AI_playfield&, bool);

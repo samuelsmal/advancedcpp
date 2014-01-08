@@ -88,8 +88,9 @@ int computerPlayer::play(const playfield& field) {
     }
   }
 
-  std::cout << std::endl;
-  std::sort(begin(weighted_cols), end(weighted_cols),
+  std::random_shuffle(begin(weighted_cols), end(weighted_cols));
+  
+  std::stable_sort(begin(weighted_cols), end(weighted_cols),
             [](const weight &left, const weight &right)
               {return std::get<0>(left) < std::get<0>(right);});
   

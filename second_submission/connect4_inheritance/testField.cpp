@@ -179,7 +179,7 @@ void testField::testMeasure() {
   
   ai_p.insertStone(0, 5, 1);
   
-  assert(AI_Util::measureStone(ai_p, 0, 5, 1) == 1);
+  assert(AI_Util::measureStone(ai_p, 0, 5, 1) == 1.5);
   
   /*
    
@@ -190,16 +190,16 @@ void testField::testMeasure() {
    % % % % %
    
    */
-  assert(AI_Util::measureDirection(ai_p, 1, 4, -1, -1, 1) == 0);
-  assert(AI_Util::measureDirection(ai_p, 1, 4, -1,  0, 1) == 0);
-  assert(AI_Util::measureDirection(ai_p, 1, 4, -1,  1, 1) == 1);
-  assert(AI_Util::measureDirection(ai_p, 1, 4,  0,  1, 1) == 0);
-  assert(AI_Util::measureDirection(ai_p, 1, 4,  1,  1, 1) == 0);
-  assert(AI_Util::measureDirection(ai_p, 1, 4,  1,  0, 1) == 0);
-  assert(AI_Util::measureDirection(ai_p, 1, 4,  1, -1, 1) == 0);
+  assert(AI_Util::measureDirection(ai_p, 1, 4, -1, -1, 1) == 0.0);
+  assert(AI_Util::measureDirection(ai_p, 1, 4, -1,  0, 1) == 0.0);
+  assert(AI_Util::measureDirection(ai_p, 1, 4, -1,  1, 1) == 1.4);
+  assert(AI_Util::measureDirection(ai_p, 1, 4,  0,  1, 1) == 0.0);
+  assert(AI_Util::measureDirection(ai_p, 1, 4,  1,  1, 1) == 0.0);
+  assert(AI_Util::measureDirection(ai_p, 1, 4,  1,  0, 1) == 0.0);
+  assert(AI_Util::measureDirection(ai_p, 1, 4,  1, -1, 1) == 0.0);
 
   
-  assert(AI_Util::measureStone(ai_p, 1, 4, 1) == 1);
+  assert(AI_Util::measureStone(ai_p, 1, 4, 1) == 0.0);
   
   /*
    
@@ -211,7 +211,7 @@ void testField::testMeasure() {
    
    */
   assert(AI_Util::measureDirection(ai_p, 1, 5, -1, -1, 1) == 0);
-  assert(AI_Util::measureDirection(ai_p, 1, 5, -1,  0, 1) == 1);
+  assert(AI_Util::measureDirection(ai_p, 1, 5, -1,  0, 1) == 1.4);
   assert(AI_Util::measureDirection(ai_p, 1, 5, -1,  1, 1) == 0);
   assert(AI_Util::measureDirection(ai_p, 1, 5,  0,  1, 1) == 0);
   assert(AI_Util::measureDirection(ai_p, 1, 5,  1,  1, 1) == 0);
@@ -219,7 +219,7 @@ void testField::testMeasure() {
   assert(AI_Util::measureDirection(ai_p, 1, 5,  1,  1, 1) == 0);
   
 
-  assert(AI_Util::measureStone(ai_p, 1, 5, 1) == 1);
+  assert(AI_Util::measureStone(ai_p, 1, 5, 1) == 1.4);
   
   // 2. Stone
   
@@ -234,8 +234,9 @@ void testField::testMeasure() {
    % % % % %
    
    */
+  
   assert(AI_Util::measureDirection(ai_p, 1, 5, -1, -1, 1) == 0);
-  assert(AI_Util::measureDirection(ai_p, 1, 5, -1,  0, 1) == 1);
+  assert(AI_Util::measureDirection(ai_p, 1, 5, -1,  0, 1) == 1.4);
   assert(AI_Util::measureDirection(ai_p, 1, 5, -1,  1, 1) == 0);
   assert(AI_Util::measureDirection(ai_p, 1, 5,  0,  1, 1) == 0);
   assert(AI_Util::measureDirection(ai_p, 1, 5,  1,  1, 1) == 0);
@@ -243,7 +244,11 @@ void testField::testMeasure() {
   assert(AI_Util::measureDirection(ai_p, 1, 5,  1,  1, 1) == 0);
   
   
-  assert(AI_Util::measureStone(ai_p, 1, 5, 1) == 1);
+  assert(AI_Util::measureStone(ai_p, 1, 5, 1) == 1.4);
+  
+  ai_p.insertStone(1, 5, 2);
+  
+  assert(AI_Util::measureStone(ai_p, 1, 4, 1) == 3.0);
   
   /*
    
@@ -254,16 +259,16 @@ void testField::testMeasure() {
    % % % % %
    
    */
-  assert(AI_Util::measureDirection(ai_p, 1, 4, -1, -1, 1) == 1);
-  assert(AI_Util::measureDirection(ai_p, 1, 4, -1,  0, 1) == 1);
-  assert(AI_Util::measureDirection(ai_p, 1, 4, -1,  1, 1) == 2);
-  assert(AI_Util::measureDirection(ai_p, 1, 4,  0,  1, 1) == 1);
-  assert(AI_Util::measureDirection(ai_p, 1, 4,  1,  1, 1) == 1);
-  assert(AI_Util::measureDirection(ai_p, 1, 4,  1,  0, 1) == 1);
-  assert(AI_Util::measureDirection(ai_p, 1, 4,  1, -1, 1) == 1);
+  assert(AI_Util::measureDirection(ai_p, 1, 4, -1, -1, 1) == 1.5);
+  assert(AI_Util::measureDirection(ai_p, 1, 4, -1,  0, 1) == 1.5);
+  assert(AI_Util::measureDirection(ai_p, 1, 4, -1,  1, 1) == 3.0);
+  assert(AI_Util::measureDirection(ai_p, 1, 4,  0,  1, 1) == 1.5);
+  assert(AI_Util::measureDirection(ai_p, 1, 4,  1,  1, 1) == 1.5);
+  assert(AI_Util::measureDirection(ai_p, 1, 4,  1,  0, 1) == 1.5);
+  assert(AI_Util::measureDirection(ai_p, 1, 4,  1, -1, 1) == 1.5);
   
   
-  assert(AI_Util::measureStone(ai_p, 1, 4, 1) == 2);
+  assert(AI_Util::measureStone(ai_p, 1, 4, 1) == 3.0);
   
   //
   // 2. Case
@@ -275,17 +280,25 @@ void testField::testMeasure() {
   ai_p2.insertStone(4, 5, 1);
   ai_p2.insertStone(5, 5, 1);
   
-  assert(AI_Util::measureStone(ai_p2, 3, 5, 1) == 3);
+  assert(AI_Util::measureStone(ai_p2, 3, 5, 1) == 4.5);
   
   ai_p2.insertStone(6, 5, 1);
   
-  assert(AI_Util::measureStone(ai_p2, 6, 5, 1) == 4);
+  assert(AI_Util::measureStone(ai_p2, 6, 5, 1) == 6.0);
+  
+  assert(AI_Util::measureStone(ai_p2, 1, 5, 1) == 2.0);
   
   //
   // 3. Case
   //
   
   AI_playfield ai_p3;
+  
+  ai_p3.insertStone(0, 0, 2);
+  ai_p3.insertStone(1, 0, 2);
+  ai_p3.insertStone(2, 0, 1);
+  
+  assert(AI_Util::measureStone(ai_p3, 3, 0, 2) == 0);
   
   
 }

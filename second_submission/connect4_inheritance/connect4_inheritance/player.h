@@ -12,7 +12,7 @@ class player {
 // you need methods to verify whether the opponent can win,
 // copy the field into the class that you expect.
   virtual int play(const playfield &field) =0;
-  virtual ~player() {}
+  virtual ~player() {} // To allow inherited classes to use proper cleanup.
 };
 
 #endif // PLAYER_H

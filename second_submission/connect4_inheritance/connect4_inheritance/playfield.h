@@ -49,7 +49,7 @@ class playfield {
       rep[x][y] = player;
     }
 
-    void print () {
+    void print() {
       for (int i{0}; i < height; ++i) {
         std::cout << " | ";
         for (int j{0}; j < width; ++j) {
@@ -64,6 +64,28 @@ class playfield {
       }
       std::cout << "===" << std::endl;
 
+      std::cout << " | ";
+      for (int i{0}; i < width; ++i) {
+        std::cout << i << " | ";
+      }
+      std::cout << std::endl;
+    }
+  
+    void print() const {
+      for (int i{0}; i < height; ++i) {
+        std::cout << " | ";
+        for (int j{0}; j < width; ++j) {
+          std::cout << rep[j][i] << " | ";
+        }
+        std::cout << std::endl;
+      }
+      
+      std::cout << "  ";
+      for (int i{0}; i < width - 1; ++i) {
+        std::cout << "====";
+      }
+      std::cout << "===" << std::endl;
+      
       std::cout << " | ";
       for (int i{0}; i < width; ++i) {
         std::cout << i << " | ";
