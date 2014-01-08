@@ -4,6 +4,8 @@
 #include <exception>
 #include <sstream>
 
+#include "manipulator.h"
+
 // crap...
 using std::string;
 using std::cout;
@@ -39,10 +41,24 @@ void RPN<T>::startConsole()
 template <typename T>
 void RPN<T>::printStack() {
   cout << endl;
-  for (size_t i = 0, e = stack.size(); i < e; ++i)
-  {
-    cout << i + 1 << ": " << stack[i] << endl;
+  
+  if (format == 1) {
+    cout << manipulator::scientific;
+  } else if (format == 2) {
+    cout << manipulator::prec_float;
+  } else {
+    cout << manipulator::reset;
   }
+
+//  for (size_t i = 0, e = stack.size(); i < e; ++i)
+//  {
+//    cout << i + 1 << ": " << stack[i] << endl;
+//  }
+
+  for (const auto& el : stack) {
+    cout << el << endl;
+  }
+
 }
 
 template <typename T>
@@ -139,6 +155,22 @@ bool RPN<T>::parseInput(std::string input)
         popOfStack();
       } else if ((cmd.compare("q") == 0) || (cmd.compare("Q") == 0)) {
         ret_value = false;
+      } else if ((cmd.compare("f") == 0) || (cmd.compare("F") == 0)) {
+        ss >> cmd;
+        if ((cmd.compare("s") == 0) || (cmd.compare("S") == 0)) {
+          format = 1;
+          cout << "Scientific output from now on." << endl;
+        } else if ((cmd.compare("p") == 0) || (cmd.compare("P") == 0)) {
+          format = 2;
+          cout << "Set precision." << endl;
+        } else if ((cmd.compare("n") == 0) || (cmd.compare("N") == 0)) {
+          format = 0;
+          cout << "Normal output from now on." << endl;
+        } else {
+          std::cerr << "Invalid command f" << cmd << " entered." << std::endl;
+        }
+
+            
       } else {
         std::cerr << "Invalid command " << cmd << " entered." << std::endl;
       }

@@ -8,7 +8,6 @@
 
 #include "persister.h"
 
-export
 template <typename T,                // T models the type of the vector.
           typename P = Persister<T>> // P Models the type of the persister (see read and write).
 class pvector {

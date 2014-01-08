@@ -1,6 +1,8 @@
 #ifndef __Util__Util__
 #define __Util__Util__
 
+#include <iostream>
+
 namespace Util {
   int gcd(int a, int b);
   inline int lcm(int a, int b) {

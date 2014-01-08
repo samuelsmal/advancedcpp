@@ -5,10 +5,14 @@
 #include <iostream>
 #include "pvector.h"
 
-export
 template <typename T>
 class RPN {
  private:
+  
+  using formatType = unsigned;
+  
+  formatType format;
+  
   pvector<T> stack;
 
   bool parseInput(std::string input); // Returns false if calc is finished.
@@ -26,6 +30,8 @@ class RPN {
 
   void pushToStack(T num);
   void popOfStack();
+  
+  
 
   void startConsole();
 };

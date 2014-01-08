@@ -5,7 +5,7 @@
 
 int main(int argc, char** argv)
 {
-  RPN<Fraction> rpn_calculator{"Fraction.txt"};
+  RPN<float> rpn_calculator{"Float.txt"};
   rpn_calculator.startConsole();
 
   return 0;
